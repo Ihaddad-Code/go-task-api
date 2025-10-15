@@ -1,6 +1,8 @@
 # builder (compilation)
 FROM golang:1.25.2-alpine AS builder
 
+ENV GOTOOLCHAIN=auto
+
 # Réduit la taille de l’image
 RUN apk add --no-cache ca-certificates
 
@@ -25,9 +27,6 @@ WORKDIR /app
 
 # Copie uniquement le binaire
 COPY --from=builder /app/go-task-api .
-
-# Copie aussi le fichier de données (vide ou existant)
-COPY --from=builder /app/tasks.json ./tasks.json
 
 EXPOSE 8080
 
