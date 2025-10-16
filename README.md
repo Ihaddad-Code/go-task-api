@@ -32,23 +32,29 @@ curl http://localhost:8080/healthz
 
 ---
 
-## Lancer via le Makefile et Docker
+## 1 Lancer via le Makefile avec et sans Docker
 
-### 1 Construire l’image et lancer le conteneur
+### Avec Docker
 
 ```bash
 make docker-build
 make docker-run-persist
 ```
 
-### 2 Dans un nouveau terminal
+### Sans Docker
+
+```bash
+make run
+```
+
+## 2 Dans un nouveau terminal
 
 ```bash
 # 1) Vérifier le service
 curl -s http://localhost:8080/healthz
 
 # 2) Créer 3 tâches
-curl -s -X POST http://localhost:8080/tasks -H "Content-Type: application/json" -d '{"title":"Implémentation de l\API"}'
+curl -s -X POST http://localhost:8080/tasks -H "Content-Type: application/json" -d '{"title":"Implémentation du server"}'
 curl -s -X POST http://localhost:8080/tasks -H "Content-Type: application/json" -d '{"title":"Écrire des tests"}'
 curl -s -X POST http://localhost:8080/tasks -H "Content-Type: application/json" -d '{"title":"Dockeriser le projet"}'
 
