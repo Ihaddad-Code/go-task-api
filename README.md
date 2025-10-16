@@ -1,15 +1,16 @@
-# 🧩 go-task-api
+# go-task-api
 
-Mini API REST en **Go** pour gérer des tâches (Todo).  
-✅ Concurrence thread-safe (`RWMutex`)  
-✅ Persistance simple via `tasks.json`  
-✅ Tests unitaires (`testing`, `httptest`)  
-✅ Docker multi-stage (image légère)  
-✅ Makefile pour un lancement rapide
+Mini API REST en **Go** pour gérer des tâches (Todo).
+
+- Concurrence thread-safe (`RWMutex`)
+- Persistance simple via `tasks.json`
+- Tests unitaires (`testing`, `httptest`)
+- Docker multi-stage (image légère)
+- Makefile pour un lancement rapide
 
 ---
 
-## 📦 Endpoints
+## Endpoints
 
 | Méthode    | URL           | Description               | Body (JSON)                      |
 | ---------- | ------------- | ------------------------- | -------------------------------- |
@@ -22,7 +23,7 @@ Mini API REST en **Go** pour gérer des tâches (Todo).
 
 ---
 
-## 🚀 Lancer en local
+## Lancer en local
 
 ```bash
 go run .
