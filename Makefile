@@ -5,14 +5,6 @@ IMAGE_NAME = go-task-api
 run: 
 	go run .
 
-# Lancer les tests avec logs détaillés
-test:
-	go test -v
-
-# Lancer les tests + couverture
-coverage:
-	go test -v -cover
-
 # Construire un binaire local
 build:
 	go build -o go-task-api .
