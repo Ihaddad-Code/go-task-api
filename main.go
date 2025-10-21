@@ -62,7 +62,7 @@ func main() {
 	}
 
 	go func() {
-		log.Printf("🚀 Serveur HTTP sur %s", srv.Addr)
+		log.Printf("Serveur HTTP sur %s", srv.Addr)
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("Erreur serveur: %v", err)
 		}
