@@ -27,7 +27,7 @@ func main() {
 	mux.HandleFunc("/tasks", func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case http.MethodGet:
-			handleListTasks(w, r, store)
+			handleListTasks(w, store)
 		case http.MethodPost:
 			handleCreateTask(w, r, store)
 		default:
@@ -99,7 +99,7 @@ func handleCreateTask(w http.ResponseWriter, r *http.Request, s *TaskStore) {
 	writeJSON(w, http.StatusCreated, t)
 }
 
-func handleListTasks(w http.ResponseWriter, r *http.Request, s *TaskStore) {
+func handleListTasks(w http.ResponseWriter, s *TaskStore) {
 	writeJSON(w, http.StatusOK, s.List())
 }
 

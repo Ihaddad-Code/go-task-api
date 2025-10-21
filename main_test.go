@@ -16,7 +16,7 @@ func newTestMux(store *TaskStore) *http.ServeMux {
 	mux.HandleFunc("/tasks", func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case http.MethodGet:
-			handleListTasks(w, r, store)
+			handleListTasks(w, store)
 		case http.MethodPost:
 			handleCreateTask(w, r, store)
 		default:
@@ -91,7 +91,7 @@ func TestCreateAndListTasks(t *testing.T) {
 	mux.HandleFunc("/tasks", func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case http.MethodGet:
-			handleListTasks(w, r, store)
+			handleListTasks(w, store)
 		case http.MethodPost:
 			handleCreateTask(w, r, store)
 		default:
